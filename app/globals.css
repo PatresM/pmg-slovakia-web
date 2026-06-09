@@ -44,4 +44,29 @@ body {
     transform: translateY(-24px) scale(1.08);
     opacity: 1;
   }
+}html {
+  scroll-behavior: smooth;
+}
+
+.gold-orb {
+  position: absolute;
+  z-index: 1;
+  width: 260px;
+  height: 260px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(215, 182, 111, 0.22), transparent 65%);
+  filter: blur(18px);
+  animation: floatGold 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes floatGold {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateY(-24px) scale(1.08);
+    opacity: 1;
+  }
 }
