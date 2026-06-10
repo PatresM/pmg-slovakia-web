@@ -434,8 +434,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="kontakt" className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
+      <section id="kontakt" className="relative overflow-hidden px-6 py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_35%,rgba(215,182,111,0.12),transparent_30%)]" />
+
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.85fr_1.15fr]">
           <div className="rounded-[2rem] bg-white/5 p-10 ring-1 ring-white/10">
             <p className="text-sm uppercase tracking-[0.42em] text-[#d7b66f]">
               Kontakt
@@ -477,191 +479,211 @@ export default function Home() {
               </div>
             </div>
 
-            <a
-              href="https://wa.me/421910565835"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex rounded-full bg-[#25D366] px-7 py-4 font-bold text-black transition hover:opacity-90"
-            >
-              WhatsApp kontakt
-            </a>
+            <div className="mt-8 rounded-2xl border border-[#d7b66f]/20 bg-[#d7b66f]/10 p-5">
+              <p className="text-sm font-semibold text-[#d7b66f]">
+                Rýchla reakcia
+              </p>
+              <p className="mt-2 text-sm leading-6 text-white/58">
+                Po odoslaní požiadavky sa vám ozveme späť a doladíme riešenie
+                podľa vašej situácie.
+              </p>
+            </div>
           </div>
 
           <form
             action="https://api.web3forms.com/submit"
             method="POST"
-            className="rounded-[2rem] bg-white/5 p-10 ring-1 ring-white/10"
+            className="relative overflow-hidden rounded-[2.2rem] bg-white/[0.07] p-6 shadow-[0_35px_90px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur md:p-10"
           >
-            <input
-              type="hidden"
-              name="access_key"
-              value="09968a68-c7d5-41c4-9923-4ec931cdde61"
-            />
+            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#d7b66f]/20 blur-3xl" />
 
-            <input
-              type="hidden"
-              name="subject"
-              value="Nová požiadavka z webu PMG Slovakia"
-            />
+            <div className="relative">
+              <div className="mb-8">
+                <div className="inline-flex rounded-full border border-[#d7b66f]/25 bg-[#d7b66f]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-[#d7b66f]">
+                  Nezáväzná požiadavka
+                </div>
 
-            <input
-              type="hidden"
-              name="from_name"
-              value="PMG Slovakia web"
-            />
+                <h3 className="mt-5 text-3xl font-semibold md:text-4xl">
+                  Napíšte nám, čo potrebujete vyriešiť
+                </h3>
 
-            <input
-              type="hidden"
-              name="redirect"
-              value="http://localhost:3000/dakujeme"
-            />
-
-            <input
-              type="checkbox"
-              name="botcheck"
-              className="hidden"
-              style={{ display: "none" }}
-            />
-
-            <div className="grid gap-5">
-              <div>
-                <label className="mb-2 block text-sm text-white/60">
-                  Meno a priezvisko
-                </label>
-                <input
-                  name="name"
-                  required
-                  className="w-full rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
-                  placeholder="Napríklad: Patrik Michalčák"
-                />
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-white/55">
+                  Vyplňte krátky formulár a pripravíme pre vás návrh mobility,
+                  servisu alebo firemnej starostlivosti.
+                </p>
               </div>
 
-              <div>
-                <label className="mb-2 block text-sm text-white/60">
-                  Telefón
+              <input
+                type="hidden"
+                name="access_key"
+                value="09968a68-c7d5-41c4-9923-4ec931cdde61"
+              />
+
+              <input
+                type="hidden"
+                name="subject"
+                value="Nová požiadavka z webu PMG Slovakia"
+              />
+
+              <input
+                type="hidden"
+                name="from_name"
+                value="PMG Slovakia web"
+              />
+
+              <input
+                type="hidden"
+                name="redirect"
+                value="http://localhost:3000/dakujeme"
+              />
+
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                style={{ display: "none" }}
+              />
+
+              <div className="grid gap-5 md:grid-cols-2">
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                    Meno a priezvisko
+                  </label>
+                  <input
+                    name="name"
+                    required
+                    className="w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
+                    placeholder="Napríklad: Patrik Michalčák"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                    Telefón
+                  </label>
+                  <input
+                    name="phone"
+                    required
+                    className="w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
+                    placeholder="+421 ..."
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
+                    placeholder="vas@email.sk"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                    Typ služby
+                  </label>
+                  <select
+                    name="service"
+                    required
+                    defaultValue=""
+                    className="w-full rounded-2xl border border-white/10 bg-[#05070c] p-4 text-white outline-none transition focus:border-[#d7b66f]"
+                  >
+                    <option
+                      className="bg-[#05070c] text-white"
+                      value=""
+                      disabled
+                    >
+                      Vyberte službu
+                    </option>
+                    <option
+                      className="bg-[#05070c] text-white"
+                      value="PMG Subscription"
+                    >
+                      PMG Subscription – vozidlo ako predplatné
+                    </option>
+                    <option
+                      className="bg-[#05070c] text-white"
+                      value="PMG Help Car"
+                    >
+                      PMG Help Car – náhradná mobilita
+                    </option>
+                    <option
+                      className="bg-[#05070c] text-white"
+                      value="PMG Fleet Care"
+                    >
+                      PMG Fleet Care – firemné vozidlá
+                    </option>
+                    <option
+                      className="bg-[#05070c] text-white"
+                      value="PMG Concierge"
+                    >
+                      PMG Concierge – servis, STK, vyzdvihnutie
+                    </option>
+                    <option
+                      className="bg-[#05070c] text-white"
+                      value="Individuálna požiadavka"
+                    >
+                      Individuálna požiadavka
+                    </option>
+                  </select>
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                    Správa
+                  </label>
+                  <textarea
+                    name="message"
+                    required
+                    className="min-h-40 w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
+                    placeholder="Napíšte nám, čo potrebujete vyriešiť, kedy vozidlo potrebujete alebo akú starostlivosť očakávate..."
+                  />
+                </div>
+
+                <label className="md:col-span-2 flex gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-white/58">
+                  <input
+                    type="checkbox"
+                    required
+                    name="gdpr_consent"
+                    value="Súhlas udelený"
+                    className="mt-1"
+                  />
+
+                  <span>
+                    Súhlasím so spracovaním osobných údajov za účelom
+                    kontaktovania a vybavenia mojej požiadavky. Viac informácií
+                    nájdete v časti{" "}
+                    <a
+                      href="/ochrana-osobnych-udajov"
+                      className="text-[#d7b66f] underline underline-offset-4"
+                    >
+                      Ochrana osobných údajov
+                    </a>
+                    .
+                  </span>
                 </label>
-                <input
-                  name="phone"
-                  required
-                  className="w-full rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
-                  placeholder="+421 ..."
-                />
+
+                <div className="md:col-span-2">
+                  <button
+                    type="submit"
+                    className="w-full rounded-full bg-[#d7b66f] px-8 py-5 text-base font-bold text-black shadow-[0_0_35px_rgba(215,182,111,0.28)] transition hover:-translate-y-0.5 hover:bg-[#f0cf86]"
+                  >
+                    Odoslať požiadavku →
+                  </button>
+
+                  <p className="mt-4 text-center text-xs text-white/38">
+                    Vaše údaje použijeme iba na vybavenie požiadavky.
+                  </p>
+                </div>
               </div>
-
-              <div>
-                <label className="mb-2 block text-sm text-white/60">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
-                  placeholder="vas@email.sk"
-                />
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm text-white/60">
-                  O akú službu máte záujem?
-                </label>
-                <select
-                  name="service"
-                  required
-                  defaultValue=""
-                  className="w-full rounded-xl border border-white/10 bg-[#05070c] p-4 text-white outline-none transition focus:border-[#d7b66f]"
-                >
-                  <option className="bg-[#05070c] text-white" value="" disabled>
-                    Vyberte službu
-                  </option>
-                  <option
-                    className="bg-[#05070c] text-white"
-                    value="PMG Subscription"
-                  >
-                    PMG Subscription – vozidlo ako predplatné
-                  </option>
-                  <option
-                    className="bg-[#05070c] text-white"
-                    value="PMG Help Car"
-                  >
-                    PMG Help Car – náhradná mobilita
-                  </option>
-                  <option
-                    className="bg-[#05070c] text-white"
-                    value="PMG Fleet Care"
-                  >
-                    PMG Fleet Care – firemné vozidlá
-                  </option>
-                  <option
-                    className="bg-[#05070c] text-white"
-                    value="PMG Concierge"
-                  >
-                    PMG Concierge – servis, STK, vyzdvihnutie
-                  </option>
-                  <option
-                    className="bg-[#05070c] text-white"
-                    value="Individuálna požiadavka"
-                  >
-                    Individuálna požiadavka
-                  </option>
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm text-white/60">
-                  Správa
-                </label>
-                <textarea
-                  name="message"
-                  required
-                  className="min-h-36 w-full rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
-                  placeholder="Napíšte nám, čo potrebujete vyriešiť..."
-                />
-              </div>
-
-              <label className="flex gap-3 text-sm leading-6 text-white/55">
-                <input
-                  type="checkbox"
-                  required
-                  name="gdpr_consent"
-                  value="Súhlas udelený"
-                  className="mt-1"
-                />
-
-                <span>
-                  Súhlasím so spracovaním osobných údajov za účelom
-                  kontaktovania a vybavenia mojej požiadavky. Viac informácií
-                  nájdete v časti{" "}
-                  <a
-                    href="/ochrana-osobnych-udajov"
-                    className="text-[#d7b66f] underline underline-offset-4"
-                  >
-                    Ochrana osobných údajov
-                  </a>
-                  .
-                </span>
-              </label>
-
-              <button
-                type="submit"
-                className="rounded-full bg-[#d7b66f] px-8 py-4 font-bold text-black transition hover:bg-[#f0cf86]"
-              >
-                Odoslať požiadavku
-              </button>
             </div>
           </form>
         </div>
       </section>
-
-      <a
-        href="https://wa.me/421910565835"
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-7 right-7 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-2xl shadow-[0_0_40px_rgba(37,211,102,0.55)] transition hover:scale-110"
-        aria-label="WhatsApp kontakt"
-      >
-        💬
-      </a>
 
       <footer className="border-t border-white/10 px-6 py-10 text-center text-sm text-white/50">
         <div
@@ -687,7 +709,39 @@ export default function Home() {
           info@pmgslovakia.sk · +421 910 565 835 · +421 948 027 374
         </p>
 
-        <div className="mt-5 flex flex-wrap justify-center gap-5 text-xs text-white/40">
+        <div className="mt-6 flex justify-center gap-4">
+          <a
+            href="https://wa.me/421910565835"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp PMG Slovakia"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#25D366] text-xl shadow-[0_0_22px_rgba(37,211,102,0.32)] transition hover:-translate-y-1 hover:scale-105"
+          >
+            💬
+          </a>
+
+          <a
+            href="https://www.instagram.com/pmg_slovakia/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram PMG Slovakia"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-xl text-white shadow-[0_0_22px_rgba(253,29,29,0.28)] transition hover:-translate-y-1 hover:scale-105"
+          >
+            ◎
+          </a>
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61590827006457&locale=sk_SK"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook PMG Slovakia"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#1877F2] text-xl font-bold text-white shadow-[0_0_22px_rgba(24,119,242,0.32)] transition hover:-translate-y-1 hover:scale-105"
+          >
+            f
+          </a>
+        </div>
+
+        <div className="mt-6 flex flex-wrap justify-center gap-5 text-xs text-white/40">
           <a
             href="/ochrana-osobnych-udajov"
             className="transition hover:text-white"
