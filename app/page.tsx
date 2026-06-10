@@ -494,8 +494,8 @@ export default function Home() {
 
             <input
               type="hidden"
-              name="from_name"
-              value="PMG Slovakia web"
+              name="redirect"
+              value="http://localhost:3000/dakujeme"
             />
 
             <input
