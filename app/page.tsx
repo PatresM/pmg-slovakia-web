@@ -7,8 +7,8 @@ const services = [
     text: "Mesačný model mobility bez zbytočných záväzkov. Jazdíte, my riešime starosti.",
   },
   {
-    title: "Mobility Assistance",
-    subtitle: "Pomoc kedykoľvek",
+    title: "Help Car",
+    subtitle: "Pomoc motoristom",
     text: "Náhradná mobilita pri nehode, poruche alebo servise bez prerušenia.",
   },
   {
@@ -41,12 +41,62 @@ const steps = [
   },
 ];
 
+const audiences = [
+  {
+    title: "Firmy a s.r.o.",
+    text: "Pre spoločnosti, ktoré nechcú strácať čas servisom, STK, pneumatikami, umývaním a náhradnými vozidlami.",
+  },
+  {
+    title: "Podnikatelia",
+    text: "Pre ľudí, ktorí potrebujú byť mobilní, riešiť prácu a nestrácať čas starosťami okolo vozidla.",
+  },
+  {
+    title: "Súkromné osoby",
+    text: "Pre klientov, ktorí potrebujú náhradné vozidlo, pomoc pri servise alebo flexibilné riešenie mobility.",
+  },
+  {
+    title: "Majitelia flotíl",
+    text: "Pre tých, ktorí majú viac vozidiel a chcú mať servis, logistiku a mobilitu pod jednou strechou.",
+  },
+];
+
+const businessFeatures = [
+  "servis a pravidelná údržba",
+  "STK a EK",
+  "pneuservis a sezónne prezutie",
+  "náhradné vozidlá",
+  "vyzdvihnutie a pristavenie vozidla",
+  "riešenia pre firemné flotily",
+];
+
 const benefits = [
   "Vyzdvihnutie a pristavenie vozidla",
-  "Detailing, umývanie a starostlivosť o vozidlo",
-  "Servis, STK a pneuservis",,
+  "Servis, STK, EK a pneuservis",
   "Náhradné vozidlo pri nehode alebo servise",
-  "Komplexná starostlivosť o vozidlá pre firmy aj súkromné osoby",
+  "Riešenia pre firmy, flotily aj súkromné osoby",
+];
+
+const faqs = [
+  {
+    question: "Je PMG Slovakia klasická požičovňa áut?",
+    answer:
+      "Nie. PMG Slovakia rieši komplexnú mobilitu – predplatné vozidiel, náhradnú mobilitu, pomoc motoristom a starostlivosť o vozidlá pre firmy aj jednotlivcov.",
+  },
+  {
+    question: "Viem dostať náhradné vozidlo počas servisu?",
+    answer:
+      "Áno, podľa dostupnosti a typu služby vieme zabezpečiť náhradné vozidlo, aby ste nezostali bez mobility.",
+  },
+  {
+    question: "Pomáhate aj firmám s vozovým parkom?",
+    answer:
+      "Áno. Firmám vieme pomôcť so servisom, STK, pneuservisom, umývaním, vyzdvihnutím vozidiel, náhradnými vozidlami a celkovou logistikou mobility.",
+  },
+  {
+    question: "Je možné pripraviť individuálnu ponuku?",
+    answer:
+      "Áno. Každé riešenie nastavujeme individuálne podľa potrieb klienta, počtu vozidiel, typu služby a očakávanej úrovne starostlivosti.",
+  },
 ];
 
 function BrandLogo() {
@@ -73,21 +123,27 @@ function BrandLogo() {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#05070c] text-white">
-      <header className="fixed left-1/2 top-5 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-[2rem] bg-[#05070c]/78 shadow-[0_14px_55px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-2xl">
+      <header className="fixed left-1/2 top-5 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-[2rem] bg-[#05070c]/80 shadow-[0_14px_55px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-2xl">
         <div className="flex items-center justify-between gap-6 px-6 py-4">
           <a href="#" aria-label="PMG Slovakia domov">
             <BrandLogo />
           </a>
 
-          <nav className="hidden gap-8 text-sm text-white/72 md:flex">
+          <nav className="hidden gap-7 text-sm text-white/72 lg:flex">
             <a href="#ako" className="transition hover:text-[#d7b66f]">
               Ako to funguje
             </a>
             <a href="#sluzby" className="transition hover:text-[#d7b66f]">
               Služby
             </a>
-            <a href="#preco" className="transition hover:text-[#d7b66f]">
-              Prečo PMG
+            <a href="#pre-koho" className="transition hover:text-[#d7b66f]">
+              Pre koho
+            </a>
+            <a href="#firmy" className="transition hover:text-[#d7b66f]">
+              Pre firmy
+            </a>
+            <a href="#faq" className="transition hover:text-[#d7b66f]">
+              FAQ
             </a>
             <a href="#kontakt" className="transition hover:text-[#d7b66f]">
               Kontakt
@@ -157,7 +213,7 @@ export default function Home() {
           </div>
 
           <div className="relative h-[560px] md:h-[720px]">
-            <div className="absolute -inset-10 rounded-[3rem] bg-[#d7b66f]/14 blur-3xl" />
+            <div className="absolute -inset-10 rounded-[3rem] bg-[#d7b66f]/20 blur-3xl" />
 
             <div className="relative h-full overflow-hidden rounded-[2rem] shadow-[0_35px_90px_rgba(0,0,0,0.65)]">
               <Image
@@ -217,7 +273,7 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="rounded-[2rem] bg-white/[0.045] p-7 shadow-2xl ring-1 ring-white/10 backdrop-blur transition hover:-translate-y-2 hover:bg-white/[0.075] hover:ring-[#d7b66f]/50"
+                className="rounded-[2rem] bg-white/5 p-7 shadow-2xl ring-1 ring-white/10 backdrop-blur transition hover:-translate-y-2 hover:bg-white/10 hover:ring-[#d7b66f]/50"
               >
                 <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-full bg-[#d7b66f] text-xl text-black shadow-[0_0_26px_rgba(215,182,111,0.28)]">
                   ✦
@@ -232,6 +288,75 @@ export default function Home() {
                 </h3>
 
                 <p className="mt-4 leading-7 text-white/62">{service.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pre-koho" className="bg-[#f7f5f0] px-6 py-24 text-black">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-center text-sm uppercase tracking-[0.42em] text-[#b79252]">
+            Pre koho je PMG
+          </p>
+
+          <h2 className="mt-4 text-center text-4xl font-semibold md:text-5xl">
+            Riešenia pre každého, kto potrebuje mobilitu bez starostí.
+          </h2>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-4">
+            {audiences.map((audience) => (
+              <div
+                key={audience.title}
+                className="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/10 transition hover:-translate-y-1"
+              >
+                <h3 className="text-2xl font-semibold">{audience.title}</h3>
+                <p className="mt-4 leading-7 text-black/60">
+                  {audience.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="firmy" className="relative overflow-hidden px-6 py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(215,182,111,0.14),transparent_32%),linear-gradient(135deg,#05070c_0%,#0c1420_50%,#05070c_100%)]" />
+
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.42em] text-[#d7b66f]">
+              Pre firmy
+            </p>
+
+            <h2 className="mt-4 text-4xl font-semibold md:text-5xl">
+              Venujte sa podnikaniu.
+              <span className="block text-[#d7b66f]">
+                Vozidlá nechajte na nás.
+              </span>
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-white/68">
+              Pomáhame firmám zabezpečiť každodennú mobilitu bez zbytočnej
+              administratívy. Servis, STK, EK, pneuservis, umývanie, náhradné
+              vozidlá a logistiku vozidiel riešime za vás.
+            </p>
+
+            <a
+              href="#kontakt"
+              className="mt-8 inline-flex rounded-full bg-[#d7b66f] px-8 py-4 font-bold text-black transition hover:bg-[#f0cf86]"
+            >
+              Chcem firemné riešenie
+            </a>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {businessFeatures.map((feature) => (
+              <div
+                key={feature}
+                className="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 backdrop-blur transition hover:bg-white/10"
+              >
+                <span className="text-[#d7b66f]">✓</span> {feature}
               </div>
             ))}
           </div>
@@ -270,9 +395,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="faq" className="px-6 py-24">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-center text-sm uppercase tracking-[0.42em] text-[#d7b66f]">
+            FAQ
+          </p>
+
+          <h2 className="mt-4 text-center text-4xl font-semibold md:text-5xl">
+            Najčastejšie otázky
+          </h2>
+
+          <div className="mt-12 grid gap-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 transition open:bg-white/10"
+              >
+                <summary className="cursor-pointer list-none text-xl font-semibold">
+                  {faq.question}
+                </summary>
+
+                <p className="mt-4 leading-7 text-white/62">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="kontakt" className="px-6 py-24">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
-          <div className="rounded-[2rem] bg-white/[0.045] p-10 ring-1 ring-white/10">
+          <div className="rounded-[2rem] bg-white/5 p-10 ring-1 ring-white/10">
             <p className="text-sm uppercase tracking-[0.42em] text-[#d7b66f]">
               Kontakt
             </p>
@@ -323,7 +475,7 @@ export default function Home() {
             </a>
           </div>
 
-          <form className="rounded-[2rem] bg-white/[0.045] p-10 ring-1 ring-white/10">
+          <form className="rounded-[2rem] bg-white/5 p-10 ring-1 ring-white/10">
             <div className="grid gap-5">
               <input
                 className="rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
@@ -363,8 +515,29 @@ export default function Home() {
         💬
       </a>
 
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-white/50">
-        PMG SLOVAKIA, s.r.o. · IČO: 57 381 411 · Mobilita bez starostí
+      <footer className="border-t border-white/10 px-6 py-10 text-center text-sm text-white/50">
+        <div
+          className="mb-4 flex select-none flex-col items-center justify-center text-center leading-none"
+          style={{ fontFamily: "Calibri, Arial, sans-serif" }}
+        >
+          <div className="text-[26px] font-semibold uppercase tracking-[0.16em] text-white">
+            PMG
+          </div>
+          <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.48em] text-white/70">
+            Slovakia
+          </div>
+          <div className="mt-2 text-[7px] font-semibold uppercase tracking-[0.32em] text-white/35">
+            Premium Mobility Group
+          </div>
+        </div>
+
+        <p>
+          PMG SLOVAKIA, s.r.o. · IČO: 57 381 411 · Daxnerova 9, 010 01 Žilina
+        </p>
+
+        <p className="mt-2">
+          info@pmgslovakia.sk · +421 910 595 835 · +421 948 027 374
+        </p>
       </footer>
     </main>
   );
