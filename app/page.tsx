@@ -7,8 +7,8 @@ const services = [
     text: "Mesačný model mobility bez zbytočných záväzkov. Jazdíte, my riešime starosti.",
   },
   {
-    title: "Help Car",
-    subtitle: "Pomoc motoristom",
+    title: "Mobility Assistance",
+    subtitle: "Pomoc kedykoľvek",
     text: "Náhradná mobilita pri nehode, poruche alebo servise bez prerušenia.",
   },
   {
@@ -43,28 +43,28 @@ const steps = [
 
 const benefits = [
   "Vyzdvihnutie a pristavenie vozidla",
-  "Servis, STK, EK a pneuservis",
+  "Detailing, umývanie a starostlivosť o vozidlo",
+  "Servis, STK a pneuservis",,
   "Náhradné vozidlo pri nehode alebo servise",
-  "Riešenia pre firmy, flotily aj súkromné osoby",
+  "Komplexná starostlivosť o vozidlá pre firmy aj súkromné osoby",
 ];
 
 function BrandLogo() {
   return (
-    <div className="select-none leading-none">
-      <div className="flex items-center gap-3">
-        <span className="font-serif text-[28px] font-semibold tracking-[0.08em] text-white md:text-[32px]">
-          PMG
-        </span>
-
-        <span className="hidden h-7 w-px bg-white/20 sm:block" />
-
-        <span className="hidden max-w-[140px] text-[8px] font-semibold uppercase leading-[1.5] tracking-[0.32em] text-white/55 sm:block">
-          Premium Mobility Group
-        </span>
+    <div
+      className="flex min-w-[150px] select-none flex-col items-center justify-center text-center leading-none"
+      style={{ fontFamily: "Calibri, Arial, sans-serif" }}
+    >
+      <div className="text-[31px] font-semibold uppercase tracking-[0.16em] text-white md:text-[36px]">
+        PMG
       </div>
 
-      <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.55em] text-white/72 md:text-[12px]">
+      <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.48em] text-white/78 md:text-[12px]">
         Slovakia
+      </div>
+
+      <div className="mt-2 text-[7px] font-semibold uppercase tracking-[0.32em] text-white/40 md:text-[8px]">
+        Premium Mobility Group
       </div>
     </div>
   );
@@ -73,8 +73,8 @@ function BrandLogo() {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#05070c] text-white">
-      <header className="fixed left-1/2 top-5 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-full bg-[#05070c]/78 shadow-[0_14px_55px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-2xl">
-        <div className="flex items-center justify-between px-6 py-4">
+      <header className="fixed left-1/2 top-5 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-[2rem] bg-[#05070c]/78 shadow-[0_14px_55px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-2xl">
+        <div className="flex items-center justify-between gap-6 px-6 py-4">
           <a href="#" aria-label="PMG Slovakia domov">
             <BrandLogo />
           </a>
@@ -103,7 +103,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative min-h-screen overflow-hidden px-6 pt-32">
+      <section className="relative min-h-screen overflow-hidden px-6 pt-36">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_30%,rgba(215,182,111,0.18),transparent_30%),linear-gradient(90deg,#05070c_0%,#07101d_40%,#05070c_100%)]" />
         <div className="gold-orb left-[8%] top-[22%]" />
         <div className="gold-orb right-[10%] top-[18%]" />
