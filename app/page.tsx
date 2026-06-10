@@ -475,29 +475,133 @@ export default function Home() {
             </a>
           </div>
 
-          <form className="rounded-[2rem] bg-white/5 p-10 ring-1 ring-white/10">
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            className="rounded-[2rem] bg-white/5 p-10 ring-1 ring-white/10"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="09968a68-c7d5-41c4-9923-4ec931cdde61"
+            />
+
+            <input
+              type="hidden"
+              name="subject"
+              value="Nová požiadavka z webu PMG Slovakia"
+            />
+
+            <input
+              type="hidden"
+              name="from_name"
+              value="PMG Slovakia web"
+            />
+
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+              style={{ display: "none" }}
+            />
+
             <div className="grid gap-5">
-              <input
-                className="rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
-                placeholder="Meno a priezvisko"
-              />
+              <div>
+                <label className="mb-2 block text-sm text-white/60">
+                  Meno a priezvisko
+                </label>
+                <input
+                  name="name"
+                  required
+                  className="w-full rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
+                  placeholder="Napríklad: Patrik Michalčák"
+                />
+              </div>
 
-              <input
-                className="rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
-                placeholder="Telefón"
-              />
+              <div>
+                <label className="mb-2 block text-sm text-white/60">
+                  Telefón
+                </label>
+                <input
+                  name="phone"
+                  required
+                  className="w-full rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
+                  placeholder="+421 ..."
+                />
+              </div>
 
-              <input
-                className="rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
-                placeholder="Email"
-              />
+              <div>
+                <label className="mb-2 block text-sm text-white/60">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
+                  placeholder="vas@email.sk"
+                />
+              </div>
 
-              <textarea
-                className="min-h-36 rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
-                placeholder="Čo potrebujete vyriešiť?"
-              />
+              <div>
+                <label className="mb-2 block text-sm text-white/60">
+                  O akú službu máte záujem?
+                </label>
+                <select
+                  name="service"
+                  required
+                  defaultValue=""
+                  className="w-full rounded-xl border border-white/10 bg-black/30 p-4 text-white outline-none transition focus:border-[#d7b66f]"
+                >
+                  <option value="" disabled>
+                    Vyberte službu
+                  </option>
+                  <option value="Subscription vozidla">
+                    Subscription vozidla
+                  </option>
+                  <option value="Help Car / náhradné vozidlo">
+                    Help Car / náhradné vozidlo
+                  </option>
+                  <option value="Fleet Care pre firmu">
+                    Fleet Care pre firmu
+                  </option>
+                  <option value="Servis, STK, pneuservis">
+                    Servis, STK, pneuservis
+                  </option>
+                  <option value="Individuálna požiadavka">
+                    Individuálna požiadavka
+                  </option>
+                </select>
+              </div>
 
-              <button className="rounded-full bg-[#d7b66f] px-8 py-4 font-bold text-black transition hover:bg-[#f0cf86]">
+              <div>
+                <label className="mb-2 block text-sm text-white/60">
+                  Správa
+                </label>
+                <textarea
+                  name="message"
+                  required
+                  className="min-h-36 w-full rounded-xl border border-white/10 bg-black/30 p-4 outline-none transition focus:border-[#d7b66f]"
+                  placeholder="Napíšte nám, čo potrebujete vyriešiť..."
+                />
+              </div>
+
+              <label className="flex gap-3 text-sm leading-6 text-white/55">
+                <input
+                  type="checkbox"
+                  required
+                  name="gdpr_consent"
+                  value="Súhlas udelený"
+                  className="mt-1"
+                />
+                Súhlasím so spracovaním osobných údajov za účelom kontaktovania
+                a vybavenia mojej požiadavky.
+              </label>
+
+              <button
+                type="submit"
+                className="rounded-full bg-[#d7b66f] px-8 py-4 font-bold text-black transition hover:bg-[#f0cf86]"
+              >
                 Odoslať požiadavku
               </button>
             </div>
