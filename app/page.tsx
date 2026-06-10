@@ -494,6 +494,12 @@ export default function Home() {
 
             <input
               type="hidden"
+              name="from_name"
+              value="PMG Slovakia web"
+            />
+
+            <input
+              type="hidden"
               name="redirect"
               value="http://localhost:3000/dakujeme"
             />
@@ -594,8 +600,19 @@ export default function Home() {
                   value="Súhlas udelený"
                   className="mt-1"
                 />
-                Súhlasím so spracovaním osobných údajov za účelom kontaktovania
-                a vybavenia mojej požiadavky.
+
+                <span>
+                  Súhlasím so spracovaním osobných údajov za účelom
+                  kontaktovania a vybavenia mojej požiadavky. Viac informácií
+                  nájdete v časti{" "}
+                  <a
+                    href="/ochrana-osobnych-udajov"
+                    className="text-[#d7b66f] underline underline-offset-4"
+                  >
+                    Ochrana osobných údajov
+                  </a>
+                  .
+                </span>
               </label>
 
               <button
@@ -642,6 +659,19 @@ export default function Home() {
         <p className="mt-2">
           info@pmgslovakia.sk · +421 910 595 835 · +421 948 027 374
         </p>
+
+        <div className="mt-5 flex flex-wrap justify-center gap-5 text-xs text-white/40">
+          <a
+            href="/ochrana-osobnych-udajov"
+            className="transition hover:text-white"
+          >
+            Ochrana osobných údajov
+          </a>
+
+          <a href="/cookies" className="transition hover:text-white">
+            Cookies
+          </a>
+        </div>
       </footer>
     </main>
   );
