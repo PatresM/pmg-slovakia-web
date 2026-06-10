@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "subscription vozidiel",
     "náhradné vozidlo",
     "Help Car",
-    "fleet care",
+    "Fleet Care",
     "správa vozového parku",
     "servis vozidiel",
     "STK",
