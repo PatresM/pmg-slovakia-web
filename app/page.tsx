@@ -2,24 +2,24 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Subscription",
-    subtitle: "Auto ako predplatné",
-    text: "Mesačný model mobility bez zbytočných záväzkov. Jazdíte, my riešime starosti.",
+    title: "PMG Subscription",
+    subtitle: "Vozidlo ako predplatné",
+    text: "Moderný model mobility bez klasického leasingu a zbytočných záväzkov. Jazdíte na vozidle podľa potreby, platíte mesačne a starostlivosť nechávate na nás.",
   },
   {
-    title: "Help Car",
-    subtitle: "Pomoc motoristom",
-    text: "Náhradná mobilita pri nehode, poruche alebo servise bez prerušenia.",
+    title: "PMG Help Car",
+    subtitle: "Pomoc, keď vozidlo stojí",
+    text: "Náhradná mobilita pri nehode, poruche alebo servise. Cieľ je jednoduchý – aby ste nezostali bez auta a mohli pokračovať bez prerušenia.",
   },
   {
-    title: "Fleet Care",
-    subtitle: "Pre firmy",
-    text: "Servis, STK, pneuservis, umývanie a logistika firemných vozidiel.",
+    title: "PMG Fleet Care",
+    subtitle: "Starostlivosť o firemné vozidlá",
+    text: "Riešenie pre firmy, ktoré nechcú strácať čas servisom, STK, pneuservisom, umývaním a logistikou vozidiel. Vozový park riešime za vás.",
   },
   {
-    title: "Náhradné vozidlá",
-    subtitle: "Bez výpadku",
-    text: "Keď vaše auto stojí, vy ostávate mobilný.",
+    title: "PMG Concierge",
+    subtitle: "Prémiová starostlivosť",
+    text: "Vyzdvihnutie a pristavenie vozidla, servisné úkony, STK, prezutie, umývanie a ďalšie služby na vyžiadanie. Vy riešite svoj deň, my riešime vozidlo.",
   },
 ];
 
@@ -44,58 +44,70 @@ const steps = [
 const audiences = [
   {
     title: "Firmy a s.r.o.",
-    text: "Pre spoločnosti, ktoré nechcú strácať čas servisom, STK, pneumatikami, umývaním a náhradnými vozidlami.",
+    text: "Pre spoločnosti, ktoré potrebujú spoľahlivú mobilitu bez toho, aby zamestnanci strácali čas servisom, STK, pneuservisom alebo riešením náhradných vozidiel.",
   },
   {
     title: "Podnikatelia",
-    text: "Pre ľudí, ktorí potrebujú byť mobilní, riešiť prácu a nestrácať čas starosťami okolo vozidla.",
+    text: "Pre ľudí, ktorých čas má hodnotu. Ak potrebujete byť mobilní, riešiť klientov a nie servis auta, PMG preberá starosti za vás.",
   },
   {
     title: "Súkromné osoby",
-    text: "Pre klientov, ktorí potrebujú náhradné vozidlo, pomoc pri servise alebo flexibilné riešenie mobility.",
+    text: "Pre klientov, ktorí chcú pohodlné riešenie pri servise, nehode, poruche alebo potrebe krátkodobej či dlhodobej mobility.",
   },
   {
-    title: "Majitelia flotíl",
-    text: "Pre tých, ktorí majú viac vozidiel a chcú mať servis, logistiku a mobilitu pod jednou strechou.",
+    title: "Majitelia viacerých vozidiel",
+    text: "Pre majiteľov flotíl, rodinných vozidiel alebo firemných áut, ktorí chcú mať servis, logistiku a náhradnú mobilitu pod jednou strechou.",
   },
 ];
 
 const businessFeatures = [
-  "servis a pravidelná údržba",
-  "STK a EK",
+  "pravidelný servis a údržba vozidiel",
+  "STK, EK a administratíva",
   "pneuservis a sezónne prezutie",
-  "náhradné vozidlá",
+  "náhradné vozidlo počas výpadku",
   "vyzdvihnutie a pristavenie vozidla",
-  "riešenia pre firemné flotily",
+  "umývanie a príprava vozidiel",
+  "riešenie poistných udalostí",
+  "starostlivosť o firemné flotily",
 ];
 
 const benefits = [
-  "Vyzdvihnutie a pristavenie vozidla",
-  "Servis, STK, EK a pneuservis",
-  "Náhradné vozidlo pri nehode alebo servise",
-  "Riešenia pre firmy, flotily aj súkromné osoby",
+  "Mobilita aj vtedy, keď vaše vozidlo stojí",
+  "Jedno miesto pre servis, STK, pneuservis a náhradné vozidlá",
+  "Menej administratívy a menej strateného času",
+  "Individuálne riešenia pre firmy, podnikateľov aj súkromné osoby",
 ];
 
 const faqs = [
   {
     question: "Je PMG Slovakia klasická požičovňa áut?",
     answer:
-      "Nie. PMG Slovakia rieši komplexnú mobilitu – predplatné vozidiel, náhradnú mobilitu, pomoc motoristom a starostlivosť o vozidlá pre firmy aj jednotlivcov.",
+      "Nie. PMG Slovakia nie je len klasická autopožičovňa. Naším cieľom je riešiť mobilitu komplexne – od predplatného vozidiel cez náhradné vozidlá až po starostlivosť o firemné flotily.",
   },
   {
-    question: "Viem dostať náhradné vozidlo počas servisu?",
+    question: "Čo znamená vozidlo ako predplatné?",
     answer:
-      "Áno, podľa dostupnosti a typu služby vieme zabezpečiť náhradné vozidlo, aby ste nezostali bez mobility.",
+      "Ide o flexibilný model mobility, pri ktorom klient využíva vozidlo mesačne podľa dohody. Oproti bežnému leasingu je cieľom väčšia jednoduchosť, menej starostí a možnosť nastaviť službu podľa potrieb klienta.",
+  },
+  {
+    question: "Viete zabezpečiť náhradné vozidlo počas servisu alebo nehody?",
+    answer:
+      "Áno. Jednou z hlavných služieb PMG Help Car je zabezpečiť náhradnú mobilitu v čase, keď je vaše vozidlo nepojazdné, v servise alebo riešite poistnú udalosť.",
   },
   {
     question: "Pomáhate aj firmám s vozovým parkom?",
     answer:
-      "Áno. Firmám vieme pomôcť so servisom, STK, pneuservisom, umývaním, vyzdvihnutím vozidiel, náhradnými vozidlami a celkovou logistikou mobility.",
+      "Áno. PMG Fleet Care je určené pre firmy, ktoré chcú odbremeniť svoj tím od riešenia servisu, STK, pneuservisu, umývania, logistiky vozidiel a náhradnej mobility.",
   },
   {
-    question: "Je možné pripraviť individuálnu ponuku?",
+    question: "Viete vozidlo vyzdvihnúť a pristaviť späť?",
     answer:
-      "Áno. Každé riešenie nastavujeme individuálne podľa potrieb klienta, počtu vozidiel, typu služby a očakávanej úrovne starostlivosti.",
+      "Áno. V rámci PMG Concierge vieme podľa dohody zabezpečiť vyzdvihnutie vozidla, vybavenie potrebného úkonu a následné pristavenie vozidla späť klientovi.",
+  },
+  {
+    question: "Dá sa pripraviť individuálna ponuka?",
+    answer:
+      "Áno. Každé riešenie nastavujeme individuálne podľa typu klienta, počtu vozidiel, požadovanej služby a rozsahu starostlivosti.",
   },
 ];
 
@@ -440,10 +452,10 @@ export default function Home() {
 
             <div className="mt-8 grid gap-3">
               <a
-                href="tel:+421910595835"
+                href="tel:+421910565835"
                 className="rounded-xl bg-white/5 p-4 transition hover:bg-white/10"
               >
-                +421 910 595 835
+                +421 910 565 835
               </a>
 
               <a
@@ -466,7 +478,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://wa.me/421910595835"
+              href="https://wa.me/421910565835"
               target="_blank"
               rel="noreferrer"
               className="mt-6 inline-flex rounded-full bg-[#25D366] px-7 py-4 font-bold text-black transition hover:opacity-90"
@@ -557,24 +569,39 @@ export default function Home() {
                   name="service"
                   required
                   defaultValue=""
-                  className="w-full rounded-xl border border-white/10 bg-black/30 p-4 text-white outline-none transition focus:border-[#d7b66f]"
+                  className="w-full rounded-xl border border-white/10 bg-[#05070c] p-4 text-white outline-none transition focus:border-[#d7b66f]"
                 >
-                  <option value="" disabled>
+                  <option className="bg-[#05070c] text-white" value="" disabled>
                     Vyberte službu
                   </option>
-                  <option value="Subscription vozidla">
-                    Subscription vozidla
+                  <option
+                    className="bg-[#05070c] text-white"
+                    value="PMG Subscription"
+                  >
+                    PMG Subscription – vozidlo ako predplatné
                   </option>
-                  <option value="Help Car / náhradné vozidlo">
-                    Help Car / náhradné vozidlo
+                  <option
+                    className="bg-[#05070c] text-white"
+                    value="PMG Help Car"
+                  >
+                    PMG Help Car – náhradná mobilita
                   </option>
-                  <option value="Fleet Care pre firmu">
-                    Fleet Care pre firmu
+                  <option
+                    className="bg-[#05070c] text-white"
+                    value="PMG Fleet Care"
+                  >
+                    PMG Fleet Care – firemné vozidlá
                   </option>
-                  <option value="Servis, STK, pneuservis">
-                    Servis, STK, pneuservis
+                  <option
+                    className="bg-[#05070c] text-white"
+                    value="PMG Concierge"
+                  >
+                    PMG Concierge – servis, STK, vyzdvihnutie
                   </option>
-                  <option value="Individuálna požiadavka">
+                  <option
+                    className="bg-[#05070c] text-white"
+                    value="Individuálna požiadavka"
+                  >
                     Individuálna požiadavka
                   </option>
                 </select>
@@ -627,7 +654,7 @@ export default function Home() {
       </section>
 
       <a
-        href="https://wa.me/421910595835"
+        href="https://wa.me/421910565835"
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-7 right-7 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-2xl shadow-[0_0_40px_rgba(37,211,102,0.55)] transition hover:scale-110"
@@ -657,7 +684,7 @@ export default function Home() {
         </p>
 
         <p className="mt-2">
-          info@pmgslovakia.sk · +421 910 595 835 · +421 948 027 374
+          info@pmgslovakia.sk · +421 910 565 835 · +421 948 027 374
         </p>
 
         <div className="mt-5 flex flex-wrap justify-center gap-5 text-xs text-white/40">
