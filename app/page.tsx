@@ -3,25 +3,25 @@ import Image from "next/image";
 const services = [
   {
     icon: "🚘",
-    title: "PMG Subscription",
+    title: "Subscription PMG",
     subtitle: "Vozidlo ako predplatné",
     text: "Flexibilné využívanie vozidla formou mesačného predplatného. Ideálne riešenie pre klientov, ktorí nechcú riešiť klasický leasing, dlhé záväzky ani starosti so servisom.",
   },
   {
     icon: "🛟",
-    title: "PMG Help Car",
-    subtitle: "Náhradná mobilita",
+    title: "Zero-stress mobility",
+    subtitle: "Služby najvyššieho štandardu",
     text: "Pomoc v situáciách, keď vaše vozidlo stojí pre nehodu, poruchu alebo servis. Zabezpečíme náhradné vozidlo a pomôžeme vám zostať mobilný bez výpadku.",
   },
   {
     icon: "🏢",
-    title: "PMG Fleet Care",
+    title: "Fleet Care",
     subtitle: "Starostlivosť o firemné vozidlá",
     text: "Komplexná starostlivosť o firemný vozový park. Servis, STK, EK, pneuservis, umývanie, logistika a náhradná mobilita pod jednou strechou.",
   },
   {
     icon: "🔑",
-    title: "PMG Concierge",
+    title: "Premium Concierge",
     subtitle: "Prémiová starostlivosť",
     text: "Vyzdvihnutie a pristavenie vozidla, vybavenie servisu, STK, prezutia alebo umývania. Vy sa venujete svojmu dňu, my sa postaráme o vozidlo.",
   },
@@ -554,7 +554,7 @@ export default function Home() {
                     name="name"
                     required
                     className="w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
-                    placeholder="Napríklad: Patrik Michalčák"
+                    placeholder="Napríklad: Peter Novák"
                   />
                 </div>
 
