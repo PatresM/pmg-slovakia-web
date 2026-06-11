@@ -2,24 +2,28 @@ import Image from "next/image";
 
 const services = [
   {
+    icon: "🚘",
     title: "PMG Subscription",
     subtitle: "Vozidlo ako predplatné",
-    text: "Moderný model mobility bez klasického leasingu a zbytočných záväzkov. Jazdíte na vozidle podľa potreby, platíte mesačne a starostlivosť nechávate na nás.",
+    text: "Flexibilné využívanie vozidla formou mesačného predplatného. Ideálne riešenie pre klientov, ktorí nechcú riešiť klasický leasing, dlhé záväzky ani starosti so servisom.",
   },
   {
+    icon: "🛟",
     title: "PMG Help Car",
-    subtitle: "Pomoc, keď vozidlo stojí",
-    text: "Náhradná mobilita pri nehode, poruche alebo servise. Cieľ je jednoduchý – aby ste nezostali bez auta a mohli pokračovať bez prerušenia.",
+    subtitle: "Náhradná mobilita",
+    text: "Pomoc v situáciách, keď vaše vozidlo stojí pre nehodu, poruchu alebo servis. Zabezpečíme náhradné vozidlo a pomôžeme vám zostať mobilný bez výpadku.",
   },
   {
+    icon: "🏢",
     title: "PMG Fleet Care",
     subtitle: "Starostlivosť o firemné vozidlá",
-    text: "Riešenie pre firmy, ktoré nechcú strácať čas servisom, STK, pneuservisom, umývaním a logistikou vozidiel. Vozový park riešime za vás.",
+    text: "Komplexná starostlivosť o firemný vozový park. Servis, STK, EK, pneuservis, umývanie, logistika a náhradná mobilita pod jednou strechou.",
   },
   {
+    icon: "🔑",
     title: "PMG Concierge",
     subtitle: "Prémiová starostlivosť",
-    text: "Vyzdvihnutie a pristavenie vozidla, servisné úkony, STK, prezutie, umývanie a ďalšie služby na vyžiadanie. Vy riešite svoj deň, my riešime vozidlo.",
+    text: "Vyzdvihnutie a pristavenie vozidla, vybavenie servisu, STK, prezutia alebo umývania. Vy sa venujete svojmu dňu, my sa postaráme o vozidlo.",
   },
 ];
 
@@ -214,29 +218,26 @@ export default function Home() {
                 pomoc s mobilitou
               </div>
               <div>
-                <strong className="block text-2xl text-white">1</strong>
-                partner pre všetko
+                <strong className="block text-2xl text-white">100%</strong>
+                individuálny prístup
               </div>
               <div>
-                <strong className="block text-2xl text-white">0</strong>
-                zbytočných starostí
+                <strong className="block text-2xl text-white">1</strong>
+                partner pre všetko
               </div>
             </div>
           </div>
 
-          <div className="relative h-[560px] md:h-[720px]">
-            <div className="absolute -inset-10 rounded-[3rem] bg-[#d7b66f]/20 blur-3xl" />
-
-            <div className="relative h-full overflow-hidden rounded-[2rem] shadow-[0_35px_90px_rgba(0,0,0,0.65)]">
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/5 bg-black/20 shadow-[0_25px_80px_rgba(0,0,0,0.55)]">
               <Image
                 src="/bmw-m5-hero.png"
                 alt="BMW M5 PMG Slovakia"
-                fill
-                className="object-cover object-center"
+                width={1400}
+                height={900}
                 priority
+                className="w-full rounded-[2.5rem] object-cover transition duration-700 hover:scale-[1.02]"
               />
-
-              <div className="absolute inset-0 bg-gradient-to-r from-[#05070c]/25 via-transparent to-transparent" />
             </div>
           </div>
         </div>
@@ -287,8 +288,8 @@ export default function Home() {
                 key={service.title}
                 className="rounded-[2rem] bg-white/5 p-7 shadow-2xl ring-1 ring-white/10 backdrop-blur transition hover:-translate-y-2 hover:bg-white/10 hover:ring-[#d7b66f]/50"
               >
-                <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-full bg-[#d7b66f] text-xl text-black shadow-[0_0_26px_rgba(215,182,111,0.28)]">
-                  ✦
+                <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#d7b66f] text-3xl text-black shadow-[0_0_30px_rgba(215,182,111,0.32)]">
+                  {service.icon}
                 </div>
 
                 <p className="text-sm uppercase tracking-[0.25em] text-[#d7b66f]">
@@ -534,7 +535,7 @@ export default function Home() {
               <input
                 type="hidden"
                 name="redirect"
-                value="http://localhost:3000/dakujeme"
+                value="https://pmgslovakia.sk/dakujeme"
               />
 
               <input
