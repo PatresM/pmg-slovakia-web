@@ -753,6 +753,9 @@ export default function Home() {
           <a href="/cookies" className="transition hover:text-white">
             Cookies
           </a>
+          <a href="/obchodne-podmienky" className="transition hover:text-white">
+            Obchodné podmienky
+          </a>
         </div>
       </footer>
     </main>
