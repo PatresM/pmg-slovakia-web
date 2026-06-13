@@ -89,8 +89,6 @@ export default function CookiesPage() {
             </div>
 
             <div className="rounded-2xl bg-[#d7b66f]/10 p-5 text-sm text-white/60 ring-1 ring-[#d7b66f]/20">
-              Tento text je pracovná verzia. Pred ostrým spustením odporúčame
-              finálnu právnu kontrolu.
             </div>
           </div>
         </section>
