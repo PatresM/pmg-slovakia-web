@@ -710,6 +710,10 @@ export default function Home() {
           info@pmgslovakia.sk · +421 910 565 835 · +421 948 027 374
         </p>
 
+        <p className="mt-5 text-xs text-white/35">
+          © 2026 PMG SLOVAKIA, s.r.o. Všetky práva vyhradené.
+        </p>
+
         <div className="mt-6 flex justify-center gap-4">
           <a
             href="https://wa.me/421910565835"
