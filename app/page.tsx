@@ -96,17 +96,17 @@ const faqs = [
   {
     question: "Viete zabezpečiť náhradné vozidlo počas servisu alebo nehody?",
     answer:
-      "Áno. Jednou z hlavných služieb PMG Help Car je zabezpečiť náhradnú mobilitu v čase, keď je vaše vozidlo nepojazdné, v servise alebo riešite poistnú udalosť.",
+      "Áno. Jednou z hlavných služieb je zabezpečiť náhradnú mobilitu v čase, keď je vaše vozidlo nepojazdné, v servise alebo riešite poistnú udalosť.",
   },
   {
     question: "Pomáhate aj firmám s vozovým parkom?",
     answer:
-      "Áno. PMG Fleet Care je určené pre firmy, ktoré chcú odbremeniť svoj tím od riešenia servisu, STK, pneuservisu, umývania, logistiky vozidiel a náhradnej mobility.",
+      "Áno. Fleet Care je určené pre firmy, ktoré chcú odbremeniť svoj tím od riešenia servisu, STK, pneuservisu, umývania, logistiky vozidiel a náhradnej mobility.",
   },
   {
     question: "Viete vozidlo vyzdvihnúť a pristaviť späť?",
     answer:
-      "Áno. V rámci PMG Concierge vieme podľa dohody zabezpečiť vyzdvihnutie vozidla, vybavenie potrebného úkonu a následné pristavenie vozidla späť klientovi.",
+      "Áno. V rámci Premium Concierge vieme podľa dohody zabezpečiť vyzdvihnutie vozidla, vybavenie potrebného úkonu a následné pristavenie vozidla späť klientovi.",
   },
   {
     question: "Dá sa pripraviť individuálna ponuka?",
@@ -602,27 +602,27 @@ export default function Home() {
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
-                      value="PMG Subscription"
+                      value="Subscription PMG"
                     >
-                      PMG Subscription – vozidlo ako predplatné
+                      Subscription PMG – vozidlo ako predplatné
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
-                      value="PMG Help Car"
+                      value="Zero-stress mobility"
                     >
-                      PMG Help Car – náhradná mobilita
+                      Zero-stress mobility – náhradná mobilita
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
-                      value="PMG Fleet Care"
+                      value="Fleet Care"
                     >
-                      PMG Fleet Care – firemné vozidlá
+                      Fleet Care – firemné vozidlá
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
-                      value="PMG Concierge"
+                      value="Premium Concierge"
                     >
-                      PMG Concierge – servis, STK, vyzdvihnutie
+                      Premim Concierge – servis, STK, vyzdvihnutie
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
