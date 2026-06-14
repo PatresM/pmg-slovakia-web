@@ -622,7 +622,7 @@ export default function Home() {
                       className="bg-[#05070c] text-white"
                       value="Premium Concierge"
                     >
-                      Premim Concierge
+                      Premium Concierge
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
