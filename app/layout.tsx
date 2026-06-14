@@ -9,14 +9,13 @@ export const metadata: Metadata = {
     template: "%s | PMG Slovakia",
   },
   description:
-    "PMG Slovakia poskytuje predplatné vozidiel, náhradnú mobilitu, Help Car a komplexnú starostlivosť o vozidlá pre firmy, podnikateľov aj súkromné osoby.",
+    "PMG Slovakia poskytuje predplatné vozidiel, náhradnú mobilitu, a komplexnú starostlivosť o vozidlá pre firmy, podnikateľov aj súkromné osoby.",
   keywords: [
     "PMG Slovakia",
     "prenájom vozidiel",
     "predplatné vozidiel",
     "subscription vozidiel",
     "náhradné vozidlo",
-    "Help Car",
     "Fleet Care",
     "správa vozového parku",
     "servis vozidiel",
