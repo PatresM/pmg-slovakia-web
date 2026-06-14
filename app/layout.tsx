@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | PMG Slovakia",
   },
   description:
-    "PMG Slovakia poskytuje predplatné vozidiel, náhradnú mobilitu, a komplexnú starostlivosť o vozidlá pre firmy, podnikateľov aj súkromné osoby.",
+    "PMG Slovakia poskytuje predplatné vozidiel, náhradnú mobilitu a komplexnú starostlivosť o vozidlá pre firmy, podnikateľov aj súkromné osoby.",
   keywords: [
     "PMG Slovakia",
     "prenájom vozidiel",
@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   authors: [{ name: "PMG SLOVAKIA, s.r.o." }],
   creator: "PMG SLOVAKIA, s.r.o.",
   publisher: "PMG SLOVAKIA, s.r.o.",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     title: "PMG Slovakia | Mobilita bez starostí",
     description:
