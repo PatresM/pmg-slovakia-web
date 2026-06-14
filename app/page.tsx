@@ -604,25 +604,25 @@ export default function Home() {
                       className="bg-[#05070c] text-white"
                       value="Subscription PMG"
                     >
-                      Subscription PMG – vozidlo ako predplatné
+                      Subscription PMG
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
                       value="Zero-stress mobility"
                     >
-                      Zero-stress mobility – náhradná mobilita
+                      Zero-stress mobility
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
                       value="Fleet Care"
                     >
-                      Fleet Care – firemné vozidlá
+                      Fleet Care
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
                       value="Premium Concierge"
                     >
-                      Premim Concierge – servis, STK, vyzdvihnutie
+                      Premim Concierge
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
