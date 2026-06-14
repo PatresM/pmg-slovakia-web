@@ -720,19 +720,23 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             aria-label="WhatsApp PMG Slovakia"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#25D366] text-xl shadow-[0_0_22px_rgba(37,211,102,0.32)] transition hover:-translate-y-1 hover:scale-105"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#25D366] text-white shadow-[0_0_22px_rgba(37,211,102,0.32)] transition hover:-translate-y-1 hover:scale-105"
           >
-            💬
-          </a>
+            <svg viewBox="0 0 32 32" className="h-6 w-6 fill-current">
+            <path d="M16.04 3C9.39 3 4 8.38 4 15.02c0 2.65.86 5.1 2.32 7.09L4.8 29l7.08-1.86a11.95 11.95 0 0 0 4.16.74C22.69 27.88 28 22.5 28 15.86 28 9.22 22.69 3 16.04 3Zm0 22.82c-1.32 0-2.61-.35-3.75-1.01l-.27-.16-4.2 1.1 1.12-4.08-.18-.28a9.86 9.86 0 0 1-1.6-5.37c0-5.48 4.45-9.94 9.92-9.94 5.48 0 9.86 4.46 9.86 9.94s-4.38 9.8-9.9 9.8Zm5.44-7.41c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.41-1.49-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35Z" />
+            </svg>
+           </a>
 
           <a
             href="https://www.instagram.com/pmg_slovakia/"
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram PMG Slovakia"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-xl text-white shadow-[0_0_22px_rgba(253,29,29,0.28)] transition hover:-translate-y-1 hover:scale-105"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white shadow-[0_0_22px_rgba(253,29,29,0.28)] transition hover:-translate-y-1 hover:scale-105"
           >
-            ◎
+            <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+            <path d="M7.8 2h8.4A5.81 5.81 0 0 1 22 7.8v8.4a5.81 5.81 0 0 1-5.8 5.8H7.8A5.81 5.81 0 0 1 2 16.2V7.8A5.81 5.81 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+          </svg>
           </a>
 
           <a
@@ -740,9 +744,11 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             aria-label="Facebook PMG Slovakia"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#1877F2] text-xl font-bold text-white shadow-[0_0_22px_rgba(24,119,242,0.32)] transition hover:-translate-y-1 hover:scale-105"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#1877F2] text-white shadow-[0_0_22px_rgba(24,119,242,0.32)] transition hover:-translate-y-1 hover:scale-105"
           >
-            f
+           <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+           <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.47h-1.25c-1.23 0-1.61.77-1.61 1.56v1.9h2.73l-.44 2.91h-2.29V22C18.34 21.24 22 17.08 22 12.06Z" />
+           </svg> 
           </a>
         </div>
 
