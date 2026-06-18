@@ -28,10 +28,13 @@ export const metadata: Metadata = {
   creator: "PMG SLOVAKIA, s.r.o.",
   publisher: "PMG SLOVAKIA, s.r.o.",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
-  },
+  icon: [
+    { url: "/favicon.ico" },
+    { url: "/icon.png", type: "image/png" },
+  ],
+  shortcut: "/favicon.ico",
+  apple: "/icon.png",
+},
   openGraph: {
     title: "PMG Slovakia | Mobilita bez starostí",
     description:
