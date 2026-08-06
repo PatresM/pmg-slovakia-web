@@ -11,7 +11,7 @@ const services = [
     icon: "🛟",
     title: "Zero-stress mobility",
     subtitle: "Služby najvyššieho štandardu",
-    text: "Pomoc v situáciách, keď vaše vozidlo stojí pre nehodu, poruchu alebo servis. Zabezpečíme náhradné vozidlo a pomôžeme vám zostať mobilný bez výpadku.",
+    text: "Pomoc v situáciách, keď Vaše vozidlo stojí pre nehodu, poruchu alebo servis. Zabezpečíme náhradné vozidlo a pomôžeme Vám zostať mobilný bez výpadku.",
   },
   {
     icon: "🏢",
@@ -36,12 +36,12 @@ const steps = [
   {
     number: "02",
     title: "Navrhneme riešenie",
-    text: "Vyberieme vhodnú službu, vozidlo alebo kombináciu služieb podľa vašej situácie.",
+    text: "Vyberieme vhodnú službu, vozidlo alebo kombináciu služieb podľa Vašej situácie.",
   },
   {
     number: "03",
     title: "Zostávate mobilný",
-    text: "My riešime všetko okolo vozidla, vy pokračujete bez zbytočných starostí.",
+    text: "My riešime všetko okolo vozidla, Vy pokračujete bez zbytočných starostí.",
   },
 ];
 
@@ -52,7 +52,7 @@ const audiences = [
   },
   {
     title: "Podnikatelia",
-    text: "Pre ľudí, ktorých čas má hodnotu. Ak potrebujete byť mobilní, riešiť klientov a nie servis auta, PMG preberá starosti za vás.",
+    text: "Pre ľudí, ktorých čas má hodnotu. Ak potrebujete byť mobilný, riešiť klientov a nie servis auta, PMG preberá starosti za Vás.",
   },
   {
     title: "Súkromné osoby",
@@ -76,7 +76,7 @@ const businessFeatures = [
 ];
 
 const benefits = [
-  "Mobilita aj vtedy, keď vaše vozidlo stojí",
+  "Mobilita aj vtedy, keď Vaše vozidlo stojí",
   "Jedno miesto pre servis, STK, pneuservis a náhradné vozidlá",
   "Menej administratívy a menej strateného času",
   "Individuálne riešenia pre firmy, podnikateľov aj súkromné osoby",
