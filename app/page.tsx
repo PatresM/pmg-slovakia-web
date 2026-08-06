@@ -78,7 +78,7 @@ const businessFeatures = [
 const benefits = [
   "Mobilita aj vtedy, keď Vaše vozidlo stojí",
   "Jedno miesto pre servis, STK, pneuservis a náhradné vozidlá",
-  "Menej administratívy a menej strateného času",
+  "Menej administratívy a viac produktívneho času",
   "Individuálne riešenia pre firmy, podnikateľov aj súkromné osoby",
 ];
 
@@ -187,7 +187,7 @@ export default function Home() {
             </p>
 
             <h1 className="text-5xl font-semibold leading-[1.03] md:text-7xl">
-              Vaše vozidlo.
+              Vaša mobilita.
               <span className="block text-[#d7b66f]">Naša starosť.</span>
             </h1>
 
@@ -352,7 +352,7 @@ export default function Home() {
             <p className="mt-6 text-lg leading-8 text-white/68">
               Pomáhame firmám zabezpečiť každodennú mobilitu bez zbytočnej
               administratívy. Servis, STK, EK, pneuservis, umývanie, náhradné
-              vozidlá a logistiku vozidiel riešime za vás.
+              vozidlá a logistiku vozidiel riešime za Vás.
             </p>
 
             <a
