@@ -9,10 +9,11 @@ export const metadata: Metadata = {
     template: "%s | PMG Slovakia",
   },
   description:
-    "PMG Slovakia poskytuje predplatné vozidiel, náhradnú mobilitu a komplexnú starostlivosť o vozidlá pre firmy, podnikateľov aj súkromné osoby.",
+    "PMG Slovakia poskytuje prenájom a predplatné vozidiel z portfólia 300+ áut, náhradnú mobilitu a komplexnú starostlivosť o vozidlá pre firmy, podnikateľov aj súkromné osoby.",
   keywords: [
     "PMG Slovakia",
     "prenájom vozidiel",
+    "autopožičovňa Žilina",
     "predplatné vozidiel",
     "subscription vozidiel",
     "náhradné vozidlo",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PMG Slovakia | Mobilita bez starostí",
     description:
-      "Predplatné vozidiel, náhradná mobilita a komplexná starostlivosť o vozidlá pre firmy aj jednotlivcov.",
+      "Prenájom a predplatné vozidiel, náhradná mobilita a komplexná starostlivosť o vozidlá pre firmy aj jednotlivcov.",
     url: "/",
     siteName: "PMG Slovakia",
     locale: "sk_SK",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CookieSettingsButton from "./components/CookieSettingsButton";
+import MobileMenu from "./components/MobileMenu";
 
 export const metadata: Metadata = {
   alternates: {
@@ -8,32 +9,134 @@ export const metadata: Metadata = {
   },
 };
 
-const services = [
+const icons = {
+  key: (
+    <>
+      <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" />
+      <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" />
+    </>
+  ),
+  car: (
+    <>
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+      <circle cx="7" cy="17" r="2" />
+      <path d="M9 17h6" />
+      <circle cx="17" cy="17" r="2" />
+    </>
+  ),
+  lifebuoy: (
+    <>
+      <circle cx="12" cy="12" r="10" />
+      <path d="m4.93 4.93 4.24 4.24" />
+      <path d="m14.83 9.17 4.24-4.24" />
+      <path d="m14.83 14.83 4.24 4.24" />
+      <path d="m9.17 14.83-4.24 4.24" />
+      <circle cx="12" cy="12" r="4" />
+    </>
+  ),
+  wrench: (
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+  ),
+  bell: (
+    <>
+      <path d="M3 20a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1Z" />
+      <path d="M20 16a8 8 0 1 0-16 0" />
+      <path d="M12 4v4" />
+      <path d="M10 4h4" />
+    </>
+  ),
+};
+
+const services: {
+  icon: keyof typeof icons;
+  title: string;
+  subtitle: string;
+  text: string;
+  includes?: string[];
+  className: string;
+}[] = [
   {
-    icon: "🚘",
-    title: "Subscription PMG",
-    subtitle: "Vozidlo ako predplatné",
-    text: "Flexibilné využívanie vozidla formou mesačného predplatného. Ideálne riešenie pre klientov, ktorí nechcú riešiť klasický leasing, dlhé záväzky ani starosti so servisom.",
+    icon: "key",
+    title: "Prenájom vozidiel",
+    subtitle: "Krátkodobo aj dlhodobo",
+    text: "Prenájom z portfólia viac ako 300 vozidiel – na pár dní, týždňov alebo mesiacov. Vozidlo vyberieme podľa toho, na čo ho potrebujete, a vieme ho aj pristaviť.",
+    className: "lg:col-span-3",
   },
   {
-    icon: "🛟",
+    icon: "car",
+    title: "Subscription PMG",
+    subtitle: "Vozidlo ako predplatné",
+    text: "Model, ktorý je bežný vo Švajčiarsku, prinášame na Slovensko. Jedna mesačná platba namiesto leasingu, poistenia a servisu zvlášť – Vy len jazdíte a tankujete.",
+    includes: [
+      "PZP aj havarijné poistenie",
+      "servis a údržba",
+      "letné aj zimné pneumatiky",
+      "diaľničná známka",
+      "STK a EK",
+      "náhradné vozidlo",
+    ],
+    className: "lg:col-span-3",
+  },
+  {
+    icon: "lifebuoy",
     title: "Zero-stress mobility",
     subtitle: "Služby najvyššieho štandardu",
     text: "Pomoc v situáciách, keď Vaše vozidlo stojí pre nehodu, poruchu alebo servis. Zabezpečíme náhradné vozidlo a pomôžeme Vám zostať mobilný bez výpadku.",
+    className: "lg:col-span-2",
   },
   {
-    icon: "🏢",
+    icon: "wrench",
     title: "Fleet Care",
-    subtitle: "Starostlivosť o firemné vozidlá",
-    text: "Komplexná starostlivosť o firemný vozový park. Servis, STK, EK, pneuservis, umývanie, logistika a náhradná mobilita pod jednou strechou.",
+    subtitle: "Starostlivosť o vozový park",
+    text: "Komplexná starostlivosť o vozidlá firiem aj súkromných osôb. Servis, STK, EK, pneuservis, umývanie, logistika a náhradná mobilita pod jednou strechou.",
+    className: "lg:col-span-2",
   },
   {
-    icon: "🔑",
+    icon: "bell",
     title: "Premium Concierge",
     subtitle: "Prémiová starostlivosť",
     text: "Vyzdvihnutie a pristavenie vozidla, vybavenie servisu, STK, prezutia alebo umývania. Vy sa venujete svojmu dňu, my sa postaráme o vozidlo.",
+    className: "lg:col-span-2",
   },
 ];
+
+const navLinks = [
+  { href: "#ako", label: "Ako to funguje" },
+  { href: "#sluzby", label: "Služby" },
+  { href: "#pre-koho", label: "Pre koho" },
+  { href: "#firmy", label: "Pre firmy" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#kontakt", label: "Kontakt" },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "AutoRental",
+  name: "PMG SLOVAKIA, s.r.o.",
+  alternateName: "PMG Slovakia",
+  url: "https://www.pmgslovakia.sk",
+  logo: "https://www.pmgslovakia.sk/icon.png",
+  image: "https://www.pmgslovakia.sk/og-image.jpg",
+  description:
+    "Prenájom vozidiel, predplatné vozidiel, náhradná mobilita a starostlivosť o vozový park pre firmy aj súkromné osoby.",
+  telephone: "+421910565835",
+  email: "info@pmgslovakia.sk",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Daxnerova 9",
+    postalCode: "010 01",
+    addressLocality: "Žilina",
+    addressCountry: "SK",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Slovensko",
+  },
+  sameAs: [
+    "https://www.instagram.com/pmg_slovakia/",
+    "https://www.facebook.com/profile.php?id=61590827006457",
+  ],
+};
 
 const steps = [
   {
@@ -92,14 +195,19 @@ const benefits = [
 
 const faqs = [
   {
-    question: "Je PMG Slovakia klasická požičovňa áut?",
+    question: "Je PMG Slovakia autopožičovňa?",
     answer:
-      "Nie. PMG Slovakia nie je len klasická autopožičovňa. Naším cieľom je riešiť mobilitu komplexne – od predplatného vozidiel cez náhradné vozidlá až po starostlivosť o firemné flotily.",
+      "Áno, ale nielen to. Prenajímame vozidlá krátkodobo aj dlhodobo z portfólia viac ako 300 vozidiel. Okrem toho ponúkame predplatné vozidiel, náhradnú mobilitu a starostlivosť o vozidlá firiem aj súkromných osôb.",
   },
   {
     question: "Čo znamená vozidlo ako predplatné?",
     answer:
-      "Ide o flexibilný model mobility, pri ktorom klient využíva vozidlo mesačne podľa dohody. Oproti bežnému leasingu je cieľom väčšia jednoduchosť, menej starostí a možnosť nastaviť službu podľa potrieb klienta.",
+      "Ide o model mobility, ktorý je bežný napríklad vo Švajčiarsku. Vozidlo využívate za jednu mesačnú platbu, v ktorej je poistenie, servis, pneumatiky, diaľničná známka aj STK. Dĺžku a podmienky nastavíme podľa Vašich potrieb.",
+  },
+  {
+    question: "Aký je rozdiel oproti leasingu?",
+    answer:
+      "Pri leasingu splácate vozidlo a poistenie, servis, pneumatiky či STK riešite a platíte sami. Pri predplatnom PMG je to všetko v jednej mesačnej platbe a o vozidlo sa staráme my. Na konci obdobia vozidlo jednoducho vrátite alebo predplatné predĺžite.",
   },
   {
     question: "Viete zabezpečiť náhradné vozidlo počas servisu alebo nehody?",
@@ -147,39 +255,58 @@ function BrandLogo() {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#05070c] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      <a
+        href="tel:+421910565835"
+        aria-label="Zavolať PMG Slovakia"
+        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#d7b66f] text-black shadow-[0_10px_35px_rgba(0,0,0,0.55)] transition hover:bg-[#f0cf86] lg:hidden"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          className="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+      </a>
+
       <header className="fixed left-1/2 top-5 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-[2rem] bg-[#05070c]/80 shadow-[0_14px_55px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-2xl">
-        <div className="flex items-center justify-between gap-6 px-6 py-4">
+        <div className="flex items-center justify-between gap-4 px-5 py-4 md:gap-6 md:px-6">
           <a href="#" aria-label="PMG Slovakia domov">
             <BrandLogo />
           </a>
 
           <nav className="hidden gap-7 text-sm text-white/72 lg:flex">
-            <a href="#ako" className="transition hover:text-[#d7b66f]">
-              Ako to funguje
-            </a>
-            <a href="#sluzby" className="transition hover:text-[#d7b66f]">
-              Služby
-            </a>
-            <a href="#pre-koho" className="transition hover:text-[#d7b66f]">
-              Pre koho
-            </a>
-            <a href="#firmy" className="transition hover:text-[#d7b66f]">
-              Pre firmy
-            </a>
-            <a href="#faq" className="transition hover:text-[#d7b66f]">
-              FAQ
-            </a>
-            <a href="#kontakt" className="transition hover:text-[#d7b66f]">
-              Kontakt
-            </a>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="transition hover:text-[#d7b66f]"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
-          <a
-            href="#kontakt"
-            className="rounded-full bg-[#d7b66f] px-5 py-3 text-sm font-bold text-black shadow-[0_0_30px_rgba(215,182,111,0.28)] transition hover:bg-[#f0cf86]"
-          >
-            Získať ponuku
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="#kontakt"
+              className="hidden whitespace-nowrap rounded-full bg-[#d7b66f] px-5 py-3 text-sm font-bold text-black shadow-[0_0_30px_rgba(215,182,111,0.28)] transition hover:bg-[#f0cf86] sm:inline-flex"
+            >
+              Získať ponuku
+            </a>
+
+            <MobileMenu links={navLinks} />
+          </div>
         </div>
       </header>
 
@@ -200,8 +327,8 @@ export default function Home() {
             </h1>
 
             <p className="mt-7 max-w-xl text-lg leading-8 text-white/72">
-              Predplatné vozidiel, náhradná mobilita a komplexná starostlivosť
-              o vozidlá pre firmy, podnikateľov aj súkromné osoby.
+              Prenájom a predplatné vozidiel, náhradná mobilita a komplexná
+              starostlivosť o vozidlá pre firmy, podnikateľov aj súkromné osoby.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -222,12 +349,12 @@ export default function Home() {
 
             <div className="mt-12 grid max-w-xl grid-cols-3 gap-4 text-sm text-white/60">
               <div>
-                <strong className="block text-2xl text-white">24/7</strong>
-                pomoc s mobilitou
+                <strong className="block text-2xl text-white">300+</strong>
+                vozidiel v portfóliu
               </div>
               <div>
-                <strong className="block text-2xl text-white">100%</strong>
-                individuálny prístup
+                <strong className="block text-2xl text-white">24/7</strong>
+                pomoc s mobilitou
               </div>
               <div>
                 <strong className="block text-2xl text-white">1</strong>
@@ -291,14 +418,25 @@ export default function Home() {
             Mobilita bez kompromisov
           </h2>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-4">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
             {services.map((service) => (
               <div
                 key={service.title}
-                className="rounded-[2rem] bg-white/5 p-7 shadow-2xl ring-1 ring-white/10 backdrop-blur transition hover:-translate-y-2 hover:bg-white/10 hover:ring-[#d7b66f]/50"
+                className={`${service.className} rounded-[2rem] bg-white/5 p-7 shadow-2xl ring-1 ring-white/10 backdrop-blur transition hover:-translate-y-2 hover:bg-white/10 hover:ring-[#d7b66f]/50`}
               >
-                <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#d7b66f] text-3xl text-black shadow-[0_0_30px_rgba(215,182,111,0.32)]">
-                  {service.icon}
+                <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#d7b66f] text-black shadow-[0_0_30px_rgba(215,182,111,0.32)]">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-8 w-8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.8}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    {icons[service.icon]}
+                  </svg>
                 </div>
 
                 <p className="text-sm uppercase tracking-[0.25em] text-[#d7b66f]">
@@ -310,6 +448,24 @@ export default function Home() {
                 </h3>
 
                 <p className="mt-4 leading-7 text-white/62">{service.text}</p>
+
+                {service.includes && (
+                  <>
+                    <p className="mt-6 text-sm font-semibold text-white">
+                      V mesačnej platbe:
+                    </p>
+                    <ul className="mt-3 flex flex-wrap gap-2">
+                      {service.includes.map((item) => (
+                        <li
+                          key={item}
+                          className="rounded-full border border-[#d7b66f]/25 bg-[#d7b66f]/10 px-3 py-1.5 text-sm text-[#e8d3a3]"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -556,10 +712,14 @@ export default function Home() {
 
               <div className="grid gap-5 md:grid-cols-2">
                 <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45"
+                    htmlFor="form-name"
+                  >
                     Meno a priezvisko
                   </label>
                   <input
+                    id="form-name"
+                    autoComplete="name"
                     name="name"
                     required
                     className="w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
@@ -568,10 +728,15 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45"
+                    htmlFor="form-phone"
+                  >
                     Telefón
                   </label>
                   <input
+                    id="form-phone"
+                    type="tel"
+                    autoComplete="tel"
                     name="phone"
                     required
                     className="w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
@@ -580,11 +745,15 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45"
+                    htmlFor="form-email"
+                  >
                     Email
                   </label>
                   <input
                     type="email"
+                    id="form-email"
+                    autoComplete="email"
                     name="email"
                     required
                     className="w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
@@ -593,10 +762,13 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45"
+                    htmlFor="form-service"
+                  >
                     Typ služby
                   </label>
                   <select
+                    id="form-service"
                     name="service"
                     required
                     defaultValue=""
@@ -608,6 +780,12 @@ export default function Home() {
                       disabled
                     >
                       Vyberte službu
+                    </option>
+                    <option
+                      className="bg-[#05070c] text-white"
+                      value="Prenájom vozidla"
+                    >
+                      Prenájom vozidla
                     </option>
                     <option
                       className="bg-[#05070c] text-white"
@@ -643,10 +821,13 @@ export default function Home() {
                 </div>
 
                 <div className="md:col-span-2">
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-white/45"
+                    htmlFor="form-message"
+                  >
                     Správa
                   </label>
                   <textarea
+                    id="form-message"
                     name="message"
                     required
                     className="min-h-40 w-full rounded-2xl border border-white/10 bg-[#05070c]/80 p-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#d7b66f] focus:bg-[#05070c]"
