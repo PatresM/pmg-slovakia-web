@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://pmgslovakia.sk";
+  const baseUrl = "https://www.pmgslovakia.sk";
 
   return [
     {
@@ -11,10 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/dakujeme`,
+      url: `${baseUrl}/obchodne-podmienky`,
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.2,
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/ochrana-osobnych-udajov`,

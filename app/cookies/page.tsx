@@ -1,4 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import CookieSettingsButton from "../components/CookieSettingsButton";
+
+export const metadata: Metadata = {
+  title: "Zásady používania cookies",
+  description:
+    "Aké cookies používa web PMG Slovakia, na aký účel a ako môžete svoj súhlas kedykoľvek zmeniť.",
+  alternates: {
+    canonical: "/cookies",
+  },
+};
 
 function BrandLogo() {
   return (
@@ -60,24 +71,46 @@ export default function CookiesPage() {
 
             <div>
               <h2 className="text-2xl font-semibold text-white">
-                Aké cookies používame
+                Nevyhnutné úložisko
               </h2>
               <p className="mt-3">
-                V aktuálnej verzii webu používame najmä technické cookies
-                potrebné na správne fungovanie stránky a formulára. Ak neskôr
-                pridáme analytické alebo marketingové nástroje, túto stránku
-                aktualizujeme.
+                Vo vašom prehliadači ukladáme záznam{" "}
+                <code className="text-white">pmg_cookie_consent</code>{" "}
+                (lokálne úložisko prehliadača), v ktorom si pamätáme vašu voľbu
+                k cookies. Bez neho by sme sa vás pýtali pri každej návšteve.
+                Na tento záznam sa súhlas nevyžaduje a uchováva sa, kým ho
+                nevymažete v prehliadači.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-semibold text-white">
-                Správa cookies
+                Analytické cookies (Google Analytics)
               </h2>
               <p className="mt-3">
-                Cookies môžete spravovať alebo vymazať v nastaveniach svojho
-                internetového prehliadača.
+                Iba ak kliknete na „Prijať všetko“, spustíme Google Analytics
+                (Google Ireland Limited), ktorý nám pomáha pochopiť, ako
+                návštevníci web používajú. Ukladá cookies{" "}
+                <code className="text-white">_ga</code> a{" "}
+                <code className="text-white">_ga_*</code> s platnosťou do 2
+                rokov. Údaje môžu byť prenášané aj do USA v rámci EU-US Data
+                Privacy Framework.
               </p>
+              <p className="mt-3">
+                Ak zvolíte „Len nevyhnutné“, analytické cookies sa nespustia.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold text-white">
+                Zmena alebo odvolanie súhlasu
+              </h2>
+              <p className="mt-3">
+                Svoj súhlas môžete kedykoľvek zmeniť alebo odvolať. Odvolanie
+                nemá vplyv na zákonnosť spracúvania pred jeho odvolaním.
+                Cookies môžete vymazať aj v nastaveniach svojho prehliadača.
+              </p>
+              <CookieSettingsButton className="mt-5 rounded-full bg-[#d7b66f] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#f0cf86]" />
             </div>
 
             <div>

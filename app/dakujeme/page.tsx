@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Ďakujeme",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 function BrandLogo() {
   return (
@@ -54,7 +63,7 @@ export default function DakujemePage() {
           </Link>
 
           <a
-            href="tel:+421910595835"
+            href="tel:+421910565835"
             className="rounded-full border border-white/20 px-8 py-4 font-bold transition hover:bg-white/10"
           >
             Zavolať PMG

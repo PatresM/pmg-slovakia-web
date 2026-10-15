@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import CookieSettingsButton from "./components/CookieSettingsButton";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const services = [
   {
@@ -231,11 +239,12 @@ export default function Home() {
           <div className="relative">
             <div className="relative overflow-hidden rounded-[2.5rem] border border-white/5 bg-black/20 shadow-[0_25px_80px_rgba(0,0,0,0.55)]">
               <Image
-                src="/bmw-m5-hero.png"
+                src="/bmw-m5-hero.webp"
                 alt="BMW M5 PMG Slovakia"
-                width={1400}
-                height={900}
+                width={1535}
+                height={1024}
                 priority
+                sizes="(min-width: 1280px) 760px, (min-width: 768px) 60vw, 100vw"
                 className="w-full rounded-[2.5rem] object-cover transition duration-700 hover:scale-[1.02]"
               />
             </div>
@@ -535,7 +544,7 @@ export default function Home() {
               <input
                 type="hidden"
                 name="redirect"
-                value="https://pmgslovakia.sk/dakujeme"
+                value="https://www.pmgslovakia.sk/dakujeme"
               />
 
               <input
@@ -766,6 +775,8 @@ export default function Home() {
           <a href="/obchodne-podmienky" className="transition hover:text-white">
             Obchodné podmienky
           </a>
+
+          <CookieSettingsButton className="transition hover:text-white" />
         </div>
       </footer>
     </main>

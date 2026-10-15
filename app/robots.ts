@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://pmgslovakia.sk/sitemap.xml",
+    sitemap: "https://www.pmgslovakia.sk/sitemap.xml",
   };
 }

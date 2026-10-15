@@ -2,8 +2,26 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
+import { OPEN_COOKIE_SETTINGS_EVENT } from "./CookieSettingsButton";
 
 const GA_ID = "G-6KX27T9W8G";
+
+function disableAnalytics() {
+  (window as unknown as Record<string, boolean>)[`ga-disable-${GA_ID}`] = true;
+
+  const hostname = window.location.hostname;
+  const domains = ["", hostname, `.${hostname.replace(/^www\./, "")}`];
+
+  document.cookie.split(";").forEach((cookie) => {
+    const name = cookie.split("=")[0].trim();
+
+    if (name === "_ga" || name.startsWith("_ga_")) {
+      domains.forEach((domain) => {
+        document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`;
+      });
+    }
+  });
+}
 
 export default function CookieBanner() {
   const [consent, setConsent] = useState<string | null>(null);
@@ -11,15 +29,23 @@ export default function CookieBanner() {
   useEffect(() => {
     const savedConsent = localStorage.getItem("pmg_cookie_consent");
     setConsent(savedConsent);
+
+    const openSettings = () => setConsent(null);
+    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, openSettings);
+
+    return () =>
+      window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, openSettings);
   }, []);
 
   const acceptAll = () => {
+    (window as unknown as Record<string, boolean>)[`ga-disable-${GA_ID}`] = false;
     localStorage.setItem("pmg_cookie_consent", "accepted");
     setConsent("accepted");
   };
 
   const rejectOptional = () => {
     localStorage.setItem("pmg_cookie_consent", "necessary");
+    disableAnalytics();
     setConsent("necessary");
   };
 

@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Ochrana osobných údajov",
+  description:
+    "Ako PMG SLOVAKIA, s.r.o. spracúva osobné údaje z kontaktného formulára a webu a aké máte práva.",
+  alternates: {
+    canonical: "/ochrana-osobnych-udajov",
+  },
+};
 
 function BrandLogo() {
   return (
@@ -63,7 +73,7 @@ export default function OchranaOsobnychUdajovPage() {
               <p className="mt-3">
                 Email: info@pmgslovakia.sk
                 <br />
-                Telefón: +421 910 595 835, +421 948 027 374
+                Telefón: +421 910 565 835, +421 948 027 374
               </p>
             </div>
 
@@ -94,9 +104,28 @@ export default function OchranaOsobnychUdajovPage() {
                 Právny základ
               </h2>
               <p className="mt-3">
-                Právnym základom spracúvania je súhlas dotknutej osoby a/alebo
-                vykonanie opatrení pred uzatvorením zmluvy na základe žiadosti
-                dotknutej osoby.
+                Právnym základom spracúvania je vykonanie opatrení pred
+                uzatvorením zmluvy na základe žiadosti dotknutej osoby (čl. 6
+                ods. 1 písm. b) GDPR) a pri analytických cookies súhlas
+                dotknutej osoby (čl. 6 ods. 1 písm. a) GDPR).
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold text-white">
+                Príjemcovia a sprostredkovatelia
+              </h2>
+              <p className="mt-3">
+                Správy z kontaktného formulára sa k nám doručujú cez službu
+                Web3Forms, ktorá ich spracúva ako sprostredkovateľ. Ak udelíte
+                súhlas s analytickými cookies, údaje o návšteve webu spracúva
+                Google Ireland Limited (Google Analytics). Pri týchto službách
+                môže dochádzať k prenosu údajov do USA, a to na základe EU-US
+                Data Privacy Framework alebo štandardných zmluvných doložiek.
+              </p>
+              <p className="mt-3">
+                Osobné údaje nepredávame a nepoužívame ich na automatizované
+                rozhodovanie ani profilovanie.
               </p>
             </div>
 
@@ -105,8 +134,10 @@ export default function OchranaOsobnychUdajovPage() {
                 Doba uchovávania
               </h2>
               <p className="mt-3">
-                Údaje uchovávame len po dobu nevyhnutnú na vybavenie požiadavky,
-                prípadne po dobu potrebnú na plnenie zákonných povinností.
+                Údaje z dopytu uchovávame najdlhšie 1 rok od posledného
+                kontaktu, ak z neho nevznikne zmluvný vzťah. Ak zmluva vznikne,
+                údaje uchovávame po dobu jej trvania a po dobu potrebnú na
+                plnenie zákonných povinností (napr. účtovných).
               </p>
             </div>
 
@@ -117,8 +148,15 @@ export default function OchranaOsobnychUdajovPage() {
               <p className="mt-3">
                 Máte právo na prístup k osobným údajom, ich opravu, vymazanie,
                 obmedzenie spracúvania, prenositeľnosť údajov a právo namietať
-                proti spracúvaniu. Svoje práva si môžete uplatniť emailom na
-                info@pmgslovakia.sk.
+                proti spracúvaniu. Udelený súhlas môžete kedykoľvek odvolať,
+                pri cookies cez odkaz „Nastavenia cookies“ v pätičke webu.
+                Svoje práva si môžete uplatniť emailom na info@pmgslovakia.sk.
+              </p>
+              <p className="mt-3">
+                Ak sa domnievate, že spracúvanie vašich údajov porušuje
+                predpisy, máte právo podať návrh na začatie konania na Úrad na
+                ochranu osobných údajov Slovenskej republiky, Hraničná 12, 820 07
+                Bratislava 27, www.dataprotection.gov.sk.
               </p>
             </div>
           </div>

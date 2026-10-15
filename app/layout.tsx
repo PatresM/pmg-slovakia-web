@@ -3,7 +3,7 @@ import CookieBanner from "./components/CookieBanner";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pmgslovakia.sk"),
+  metadataBase: new URL("https://www.pmgslovakia.sk"),
   title: {
     default: "PMG Slovakia | Mobilita bez starostí",
     template: "%s | PMG Slovakia",
@@ -27,25 +27,17 @@ export const metadata: Metadata = {
   authors: [{ name: "PMG SLOVAKIA, s.r.o." }],
   creator: "PMG SLOVAKIA, s.r.o.",
   publisher: "PMG SLOVAKIA, s.r.o.",
-  icons: {
-  icon: [
-    { url: "/favicon.ico" },
-    { url: "/icon.png", type: "image/png" },
-  ],
-  shortcut: "/favicon.ico",
-  apple: "/icon.png",
-},
   openGraph: {
     title: "PMG Slovakia | Mobilita bez starostí",
     description:
       "Predplatné vozidiel, náhradná mobilita a komplexná starostlivosť o vozidlá pre firmy aj jednotlivcov.",
-    url: "https://pmgslovakia.sk",
+    url: "/",
     siteName: "PMG Slovakia",
     locale: "sk_SK",
     type: "website",
     images: [
       {
-        url: "/bmw-m5-hero.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "PMG Slovakia - mobilita bez starostí",
@@ -57,7 +49,7 @@ export const metadata: Metadata = {
     title: "PMG Slovakia | Mobilita bez starostí",
     description:
       "Predplatné vozidiel, náhradná mobilita a komplexná starostlivosť o vozidlá.",
-    images: ["/bmw-m5-hero.png"],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
